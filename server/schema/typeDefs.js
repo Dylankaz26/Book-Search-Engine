@@ -26,4 +26,13 @@ type Auth {
 type Query {
     me: User
 }
+
+input BookInput {
+    bookId: ID!
+    authors: [String]
+    description: String
+    title: String!
+    image: String
+    link: String
+}
 `;
