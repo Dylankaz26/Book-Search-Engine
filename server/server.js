@@ -25,7 +25,11 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/'));
 });
 
+const startServer = async () => {
+  await server.start();
+  server.applyMiddleware({ app });
 
 db.once('open', () => {
   app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
-});
+})
+};
